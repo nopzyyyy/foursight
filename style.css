@@ -1,4 +1,3 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 :root { --bg:#050504; --panel:rgba(22,19,10,.72); --line:rgba(255,196,0,.13); --muted:#999b9f; --lime:#ffc400; --green:#21d777; --text:#fffdf7; }
@@ -32,8 +31,6 @@ main{background-image:linear-gradient(rgba(255,190,0,.014) 1px,transparent 1px),
 @keyframes slowSpin{to{transform:rotate(360deg)}}
 @keyframes cardReveal{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 @media(max-width:620px){.brand-wordmark{width:88px}.hero{padding-top:130px}.hero-emblem{width:45px;height:45px}.hero h1{font-size:47px}.rotator{display:block;width:220px;margin:8px auto 0;height:1.12em}.ticker-track>div{display:flex!important}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-.hero-emblem{display:block;margin:0 auto 18px}.rotator b:first-child{animation-delay:-.8s}
 
 /* Navigation User Profile & Position Cards styling */
 .nav-profile-container{display:flex;align-items:center;gap:12px}

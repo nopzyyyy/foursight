@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foursight — Markets for what matters next</title>
+  <meta name="description" content="A premium prediction-market platform for sports, politics, crypto and culture.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Foursight — Markets for what matters next">
+  <meta property="og:description" content="See the outcome. Own the moment.">
+  <meta property="og:image" content="/og.png">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <img class="page-watermark watermark-left" src="/foursight-emblem.png" alt="">
+    <img class="page-watermark watermark-right" src="/foursight-logo-alt.png" alt="">
+
+    <!-- Navigation Header -->
+    <header class="nav glass">
+      <a class="brand" href="#top">
+        <img class="brand-emblem" src="/foursight-emblem.png" alt="">
+        <img class="brand-wordmark" src="/foursight-wordmark.png" alt="Foursight">
+        <em>LIVE</em>
+      </a>
+      <nav>
+        <a href="#markets">Markets</a>
+        <a href="#how">How it works</a>
+        <a href="#activity">Activity</a>
+      </nav>
+      <div class="nav-actions" id="nav-actions-container">
+        <!-- Auth states rendered dynamically by JS -->
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="top">
+      <img class="hero-emblem" src="/foursight-emblem.png" alt="">
+      <div class="eyebrow"><i></i> LIVE PREDICTION MARKETS <span>•</span> TRADE ON CONVICTION</div>
+      <h1>Don’t just bet.<br><span class="gold">BET</span> <span class="rotator"><b>Trusted</b><b>Instant</b><b>Private</b></span></h1>
+      <p>Trade outcomes privately. No frontruns. No copycats. Only pure conviction — wrapped in a clean, premium market experience.</p>
+      <div class="hero-actions">
+        <a class="primary" href="#markets">Explore markets <span>→</span></a>
+        <button class="secondary" id="hero-topup-btn">Top up balance</button>
+      </div>
+      <div class="proof">
+        <span class="avatar-stack"><b>J</b><b>K</b><b>A</b></span>
+        <strong>14,280</strong> traders active today <i></i> <strong>$72.4M</strong> 24h volume
+      </div>
+    </section>
+
+    <!-- Live Ticker Section -->
+    <section class="ticker glass" aria-label="Live market ticker">
+      <div class="ticker-track" id="ticker-track-container">
+        <!-- Coin tickers rendered dynamically by JS -->
+      </div>
+    </section>
+
+    <!-- Market Section -->
+    <section class="market-section" id="markets">
+      <div class="section-heading">
+        <div>
+          <span class="kicker">THE MARKET FLOOR</span>
+          <h2>What happens next?</h2>
+        </div>
+        <div class="live-pill"><i></i> LIVE • Updates every second</div>
+      </div>
+      <div class="market-tools glass">
+        <div class="tabs" id="category-tabs-container">
+          <!-- Category tabs rendered dynamically by JS -->
+        </div>
+        <label class="search">
+          <span>⌕</span>
+          <input id="market-search" placeholder="Search markets" value="">
+        </label>
+      </div>
+      <div class="market-grid" id="market-grid-container">
+        <!-- Market cards rendered dynamically by JS -->
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how" id="how">
+      <div>
+        <span class="kicker">BUILT FOR CLARITY</span>
+        <h2>From opinion to position<br>in three simple steps.</h2>
+        <p>Foursight turns real-world events into clean, transparent markets. Trade global events with instant settlement.</p>
+      </div>
+      <div class="steps">
+        <article class="glass"><b>01</b><span class="step-icon">◎</span><h3>Choose a market</h3><p>Explore live events and find an outcome you believe in.</p></article>
+        <article class="glass"><b>02</b><span class="step-icon">↗</span><h3>Take a position</h3><p>Buy an outcome at the price shown and preview your payout.</p></article>
+        <article class="glass"><b>03</b><span class="step-icon">✓</span><h3>Follow the result</h3><p>Track how sentiment moves as the real-world story unfolds.</p></article>
+      </div>
+    </section>
+
+    <!-- Activity Stats Section -->
+    <section class="activity glass" id="activity">
+      <div>
+        <span class="kicker">MARKET PULSE</span>
+        <h2>Built for people with a point of view.</h2>
+      </div>
+      <div class="stats">
+        <span><b>$2.8B</b>Total volume</span>
+        <span><b>92K</b>Predictions</span>
+        <span><b>182</b>Open markets</span>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <a class="brand" href="#top">
+        <img class="brand-emblem" src="/foursight-emblem.png" alt="">
+        <img class="brand-wordmark" src="/foursight-wordmark.png" alt="Foursight">
+      </a>
+      <p>Markets for what matters next.</p>
+      <div>
+        <a href="#markets">Markets</a>
+        <a href="#how">How it works</a>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+      </div>
+      <small>© 2026 Foursight. All rights reserved. Trade responsibly.</small>
+    </footer>
+
+    <!-- Overlay & Modals Container -->
+    <div class="modal-wrap" id="modal-wrap" style="display: none;">
+      <!-- Loader state -->
+      <div class="modal glass" id="modal-loader" style="display: none; width: min(380px, 100%); border-radius: 24px; padding: 0;">
+        <div class="modal-loader">
+          <div class="spinner-gold"></div>
+          <div class="loader-text" id="loader-text-display">Verifying secure credentials...</div>
+        </div>
+      </div>
+
+      <!-- Auth Modal -->
+      <div class="modal glass" id="auth-modal" style="display: none;">
+        <button class="close" id="auth-close">×</button>
+        <span class="modal-mark"><img src="/foursight-emblem.png" alt=""></span>
+        <h2 id="auth-title">Sign in to Foursight</h2>
+        <p id="auth-description">Enter your credentials to access your portfolio.</p>
+        
+        <div class="error-message-text" id="auth-error-display" style="color: #ff8e94; font-size: 12px; margin-top: 12px; text-align: center; display: none;"></div>
+        
+        <label>Email address
+          <input type="email" id="auth-email-input" placeholder="you@example.com">
+        </label>
+        <label>Password
+          <input type="password" id="auth-password-input" placeholder="••••••••">
+        </label>
+        
+        <div id="auth-login-buttons-container">
+          <button class="primary full" id="auth-login-submit">Log In</button>
+          <div class="or"><span></span>or<span></span></div>
+          <button class="wallet-button" id="auth-wallet-submit"><span>◉</span> Continue with Web3 Wallet <b>→</b></button>
+          <p style="font-size: 11px; text-align: center; margin-top: 14px; color: var(--muted);">
+            Don't have an account? <span id="toggle-to-signup" style="color: var(--lime); cursor: pointer; font-weight: 700;">Sign up</span>
+          </p>
+        </div>
+        
+        <div id="auth-signup-buttons-container" style="display: none;">
+          <button class="primary full" id="auth-signup-submit">Sign Up</button>
+          <p style="font-size: 11px; text-align: center; margin-top: 14px; color: var(--muted);">
+            Already have an account? <span id="toggle-to-login" style="color: var(--lime); cursor: pointer; font-weight: 700;">Log in</span>
+          </p>
+        </div>
+        
+        <small>By continuing, you agree to our Terms of Service & Privacy Policy.</small>
+      </div>
+
+      <!-- Top Up Modal -->
+      <div class="modal topup-modal glass" id="topup-modal" style="display: none;">
+        <button class="close" id="topup-close">×</button>
+        <div class="modal-head">
+          <span class="modal-icon">↙</span>
+          <div>
+            <h2>Top up balance</h2>
+            <p>Select a currency to deposit funds into your account.</p>
+          </div>
+        </div>
+        <div class="coin-grid" id="topup-coin-grid">
+          <!-- Coin buttons injected dynamically by JS -->
+        </div>
+        <label>Amount (<span id="topup-coin-code-label">BNB</span>)
+          <div class="amount-input">
+            <input id="topup-amount-input" inputmode="decimal" placeholder="0.00">
+            <span id="topup-coin-code-suffix">BNB</span>
+          </div>
+        </label>
+        
+        <div class="error" id="topup-error-display" role="alert" style="display: none;">
+          <b>!</b><span id="topup-error-message">Invalid deposit amount.</span>
+        </div>
+        <div id="topup-success-display" style="color: var(--green); font-size: 12px; margin: 10px 0; text-align: center; font-weight: 700; display: none;">
+          ✓ Deposit request successful! Adding funds...
+        </div>
+        
+        <button class="primary full" id="topup-submit-btn">Deposit Funds <span>→</span></button>
+        <small>Deposits are processed securely on-chain.</small>
+      </div>
+
+      <!-- Bet/Position Modal -->
+      <div class="modal bet-modal glass" id="bet-modal" style="display: none;">
+        <button class="close" id="bet-close">×</button>
+        <div class="modal-head">
+          <span class="modal-icon">↗</span>
+          <div>
+            <span class="kicker">PLACE POSITION</span>
+            <h2 id="bet-title-display">Will Bitcoin reach $108 000?</h2>
+          </div>
+        </div>
+        <div class="selection">
+          <span>You’re backing</span>
+          <b id="bet-side-display">YES</b>
+          <strong id="bet-price-display">50.0% chance</strong>
+        </div>
+        <label>Amount (BNB)
+          <div class="amount-input">
+            <input id="bet-amount-input" autofocus inputmode="decimal" placeholder="0.00">
+            <span>BNB</span>
+          </div>
+        </label>
+        <div class="quick" id="bet-quick-buttons">
+          <!-- BNB quick buttons injected dynamically by JS -->
+        </div>
+        <div class="payout">
+          <span>Estimated payout<b id="bet-payout-display">0.0000 BNB</b></span>
+          <span>Potential profit<b class="green" id="bet-profit-display">0.0000 BNB</b></span>
+        </div>
+        
+        <div class="error" id="bet-error-display" role="alert" style="display: none;">
+          <b>!</b><span id="bet-error-message">Insufficient balance</span>
+        </div>
+        
+        <button class="primary full" id="bet-confirm-submit" disabled>Confirm Position <span>→</span></button>
+        <small>Positions are secured by smart contracts.</small>
+      </div>
+    </div>
+  </main>
+
+  <!-- Script logic -->
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
