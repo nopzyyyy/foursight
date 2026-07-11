@@ -49,8 +49,10 @@ export default function Home() {
   return (
     <main>
       <div className="ambient ambient-one" /><div className="ambient ambient-two" />
+      <img className="page-watermark watermark-left" src="/foursight-emblem.png" alt="" />
+      <img className="page-watermark watermark-right" src="/foursight-logo-alt.png" alt="" />
       <header className="nav glass">
-        <a className="brand" href="#top"><span className="brand-mark">F</span><span>FOURSIGHT</span><em>BETA</em></a>
+        <a className="brand" href="#top"><img className="brand-emblem" src="/foursight-emblem.png" alt=""/><img className="brand-wordmark" src="/foursight-wordmark.png" alt="Foursight"/><em>BETA</em></a>
         <nav><a href="#markets">Markets</a><a href="#how">How it works</a><a href="#activity">Activity</a></nav>
         <div className="nav-actions">
           <button className="icon-button" aria-label="Search markets" onClick={() => document.getElementById("market-search")?.focus()}>⌕</button>
@@ -60,15 +62,16 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
+        <img className="hero-emblem" src="/foursight-emblem.png" alt=""/>
         <div className="eyebrow"><i /> LIVE PREDICTION MARKETS <span>•</span> DEMO EXPERIENCE</div>
-        <h1>See the outcome.<br/><span>Own the moment.</span></h1>
-        <p>Trade your conviction on sports, politics, crypto and culture. Fast markets, clear odds, zero clutter.</p>
+        <h1>Don’t just bet.<br/><span className="gold">BET</span> <span className="rotator"><b>Trusted</b><b>Instant</b><b>Private</b></span></h1>
+        <p>Trade outcomes privately. No frontruns. No copycats. Only pure conviction — wrapped in a clean, premium market experience.</p>
         <div className="hero-actions"><a className="primary" href="#markets">Explore markets <span>→</span></a><button className="secondary" onClick={() => setTopupOpen(true)}>Top up balance</button></div>
         <div className="proof"><span className="avatar-stack"><b>J</b><b>K</b><b>A</b></span><strong>14,280</strong> traders active today <i /> <strong>$72.4M</strong> 24h volume</div>
       </section>
 
       <section className="ticker glass" aria-label="Live market ticker">
-        {[['BTC','$64,213','+0.59%'],['ETH','$1,819','+1.84%'],['SOL','$77.91','+0.25%'],['BNB','$580.35','+0.92%'],['XRP','$1.12','+1.45%']].map(x => <div key={x[0]}><b>{x[0]}</b><span>{x[1]}</span><em>↗ {x[2]}</em></div>)}
+        <div className="ticker-track">{[...Array(2)].flatMap((_,loop) => [['BTC','$64,213','+0.59%'],['ETH','$1,819','+1.84%'],['SOL','$77.91','+0.25%'],['BNB','$580.35','+0.92%'],['XRP','$1.12','+1.45%']].map(x => <div key={`${loop}-${x[0]}`}><b>{x[0]}</b><span>{x[1]}</span><em>↗ {x[2]}</em></div>))}</div>
       </section>
 
       <section className="market-section" id="markets">
@@ -106,11 +109,11 @@ export default function Home() {
         <div className="stats"><span><b>$2.8B</b>Total volume</span><span><b>92K</b>Predictions</span><span><b>182</b>Open markets</span></div>
       </section>
 
-      <footer className="footer"><a className="brand" href="#top"><span className="brand-mark">F</span><span>FOURSIGHT</span></a><p>Markets for what matters next.</p><div><a href="#markets">Markets</a><a href="#how">How it works</a><a href="#">Terms</a><a href="#">Privacy</a></div><small>© 2026 Foursight. Interactive product demo — no real-money transactions.</small></footer>
+      <footer className="footer"><a className="brand" href="#top"><img className="brand-emblem" src="/foursight-emblem.png" alt=""/><img className="brand-wordmark" src="/foursight-wordmark.png" alt="Foursight"/></a><p>Markets for what matters next.</p><div><a href="#markets">Markets</a><a href="#how">How it works</a><a href="#">Terms</a><a href="#">Privacy</a></div><small>© 2026 Foursight. Interactive product demo — no real-money transactions.</small></footer>
 
       {(loginOpen || topupOpen || bet) && <div className="modal-wrap" onMouseDown={e => e.target === e.currentTarget && closeModals()}>
         {loginOpen && <div className="modal glass" role="dialog" aria-modal="true" aria-labelledby="login-title">
-          <button className="close" onClick={closeModals}>×</button><span className="modal-mark">F</span><h2 id="login-title">Welcome to Foursight</h2><p>Sign in to track positions and manage your demo portfolio.</p>
+          <button className="close" onClick={closeModals}>×</button><span className="modal-mark"><img src="/foursight-emblem.png" alt=""/></span><h2 id="login-title">Welcome to Foursight</h2><p>Sign in to track positions and manage your demo portfolio.</p>
           <button className="wallet-button" onClick={() => {setLoggedIn(true); closeModals();}}><span>◉</span> Continue with wallet <b>→</b></button>
           <div className="or"><span/>or<span/></div><label>Email address<input type="email" placeholder="you@example.com" /></label><button className="primary full" onClick={() => {setLoggedIn(true); closeModals();}}>Continue with email</button><small>Demo only. No credentials or wallet connection are stored.</small>
         </div>}
