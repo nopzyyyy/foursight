@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Foursight — Markets for what matters next",
-  description: "A premium interactive prediction-market demo for sports, politics, crypto and culture.",
+  description: "A premium prediction-market platform for sports, politics, crypto and culture.",
   openGraph: {
     title: "Foursight — Markets for what matters next",
     description: "See the outcome. Own the moment.",
