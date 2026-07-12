@@ -851,7 +851,6 @@ function triggerModal(type, targetAction) {
   textDisplay.innerText = loaderText[type] || "Loading details...";
   
   // Hide all modals content first
-  document.getElementById("auth-modal").style.display = "none";
   document.getElementById("topup-modal").style.display = "none";
   document.getElementById("bet-modal").style.display = "none";
 
@@ -1072,13 +1071,10 @@ function handleConfirmPosition() {
 
 function closeModals() {
   document.getElementById("modal-wrap").style.display = "none";
-  document.getElementById("auth-modal").style.display = "none";
   document.getElementById("topup-modal").style.display = "none";
   document.getElementById("bet-modal").style.display = "none";
   document.getElementById("modal-loader").style.display = "none";
   
-  document.getElementById("auth-email-input").value = "";
-  document.getElementById("auth-password-input").value = "";
   document.getElementById("topup-amount-input").value = "";
   
   amount = "";
