@@ -81,6 +81,19 @@
       height = canvas.height = canvas.offsetHeight;
     });
 
+    const mouse = { x: null, y: null, radius: 100 };
+
+    canvas.addEventListener("mousemove", (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    });
+
+    canvas.addEventListener("mouseleave", () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
     const particles = [];
     const particleCount = 24;
 
@@ -101,6 +114,19 @@
 
       for (let i = 0; i < particleCount; i++) {
         const p1 = particles[i];
+        
+        // Mouse Repulsion Force (Crash)
+        if (mouse.x !== null && mouse.y !== null) {
+          const dx = p1.x - mouse.x;
+          const dy = p1.y - mouse.y;
+          const dist = Math.hypot(dx, dy);
+          if (dist < mouse.radius) {
+            const force = (mouse.radius - dist) / mouse.radius;
+            p1.x += (dx / dist) * force * 4.5;
+            p1.y += (dy / dist) * force * 4.5;
+          }
+        }
+
         p1.x += p1.vx;
         p1.y += p1.vy;
 

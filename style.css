@@ -78,6 +78,7 @@ main{background-image:linear-gradient(rgba(174,217,0,.014) 1px,transparent 1px),
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   padding: 50px 70px;
   box-sizing: border-box;
   background-color: #0d0f10;
@@ -87,6 +88,7 @@ main{background-image:linear-gradient(rgba(174,217,0,.014) 1px,transparent 1px),
 .auth-brand {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   text-decoration: none;
   margin-bottom: 24px;
@@ -103,6 +105,7 @@ main{background-image:linear-gradient(rgba(174,217,0,.014) 1px,transparent 1px),
   margin: auto 0;
   width: 100%;
   max-width: 400px;
+  text-align: center;
 }
 .auth-form-wrap h1 {
   font-size: 32px;
@@ -261,8 +264,9 @@ main{background-image:linear-gradient(rgba(174,217,0,.014) 1px,transparent 1px),
 .auth-footer {
   font-size: 11px;
   color: #55575b;
-  text-align: left;
+  text-align: center;
   line-height: 1.5;
+  width: 100%;
 }
 .auth-footer a {
   color: inherit;
