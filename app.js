@@ -588,7 +588,7 @@ const markets = [
 ];
 
 const coins = [
-  { code: "HOOD", name: "Robinhood", symbol: "H", color: "#aed900" },
+  { code: "ETH (HOOD)", name: "Ethereum (Robinhood)", symbol: "Ξ", color: "#aed900" },
   { code: "USDC", name: "USD Coin", symbol: "$", color: "#2775ca" },
   { code: "BTC", name: "Bitcoin", symbol: "₿", color: "#f7931a" },
   { code: "ETH", name: "Ethereum", symbol: "◆", color: "#8c8cff" },
@@ -704,7 +704,7 @@ function renderHeader() {
       <button class="topup-mini" id="header-topup-trigger">＋ Top up</button>
       <div class="nav-profile-container">
         <span class="balance-badge">
-          <strong>${(currentUser.balances["HOOD"] || 0).toFixed(4)}</strong> HOOD
+          <strong>${(currentUser.balances["ETH (HOOD)"] || 0).toFixed(4)}</strong> ETH (HOOD)
         </span>
         <button class="primary small" id="header-logout-btn">Log out</button>
       </div>
@@ -779,8 +779,8 @@ function renderMarkets() {
           <div class="position-details">
             <div class="pos-row"><span>Outcome backed</span><strong>${pos.side}</strong></div>
             <div class="pos-row"><span>Average Price</span><span>${pos.pct}% chance</span></div>
-            <div class="pos-row"><span>Risk amount</span><strong>${pos.amount.toFixed(3)} HOOD</strong></div>
-            <div class="pos-row"><span>Potential payout</span><strong style="color: var(--lime);">${pos.payout.toFixed(4)} HOOD</strong></div>
+            <div class="pos-row"><span>Risk amount</span><strong>${pos.amount.toFixed(3)} ETH (HOOD)</strong></div>
+            <div class="pos-row"><span>Potential payout</span><strong style="color: var(--lime);">${pos.payout.toFixed(4)} ETH (HOOD)</strong></div>
           </div>
           <footer style="margin-top: auto; border-top: 1px solid var(--line); padding-top: 12px; display: flex; justify-content: space-between; align-items: center;">
             <span style="color: var(--green); font-weight: 700; font-size: 12px;">Active Position</span>
@@ -826,7 +826,7 @@ function renderMarkets() {
           <svg class="trend-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.94" />
           </svg>
-          <span class="bnb-val">${poolInHOOD.toLocaleString(undefined, { maximumFractionDigits: 0 })} <b class="bnb-symbol">HOOD</b></span>
+          <span class="bnb-val">${poolInHOOD.toLocaleString(undefined, { maximumFractionDigits: 0 })} <b class="bnb-symbol">ETH (HOOD)</b></span>
         </div>
         
         <div class="percentage-header">
@@ -873,7 +873,7 @@ function renderTicker() {
   if (!container) return;
 
   const data = [
-    ['HOOD', `$${prices.HOOD.toFixed(2)}`, '+1.42%'],
+    ['ETH (HOOD)', `$${prices.HOOD.toFixed(2)}`, '+1.42%'],
     ['BTC', `$${prices.BTC.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, '+0.59%'],
     ['ETH', `$${prices.ETH.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, '+1.84%'],
     ['SOL', `$${prices.SOL.toFixed(2)}`, '+0.25%'],
@@ -971,7 +971,7 @@ function openBetModal(market, side, pct) {
     const quickContainer = document.getElementById("bet-quick-buttons");
     const quicks = [1, 5, 10, 25];
     quickContainer.innerHTML = quicks.map(q => {
-      return `<button data-val="${q}">+${q} HOOD</button>`;
+      return `<button data-val="${q}">+${q} ETH (HOOD)</button>`;
     }).join("");
 
     quickContainer.querySelectorAll("button").forEach(btn => {
@@ -994,8 +994,8 @@ function updateBetPayouts() {
   const amtVal = parseFloat(amount) || 0;
   const payVal = bet ? amtVal / (bet.pct / 100) : 0;
   
-  document.getElementById("bet-payout-display").innerText = `${payVal.toFixed(4)} HOOD`;
-  document.getElementById("bet-profit-display").innerText = `${Math.max(0, payVal - amtVal).toFixed(4)} HOOD`;
+  document.getElementById("bet-payout-display").innerText = `${payVal.toFixed(4)} ETH (HOOD)`;
+  document.getElementById("bet-profit-display").innerText = `${Math.max(0, payVal - amtVal).toFixed(4)} ETH (HOOD)`;
   
   const submitBtn = document.getElementById("bet-confirm-submit");
   submitBtn.disabled = (amtVal <= 0);
@@ -1109,7 +1109,7 @@ function handleSignup() {
       email: email,
       password: password,
       balances: {
-        HOOD: 0.00,
+        "ETH (HOOD)": 0.00,
         USDC: 0.00,
         BTC: 0.00,
         ETH: 0.00,
@@ -1155,7 +1155,7 @@ function handleWalletConnect() {
       user = {
         email: mockEmail,
         balances: {
-          HOOD: 0.00,
+          "ETH (HOOD)": 0.00,
           USDC: 0.00,
           BTC: 0.00,
           ETH: 0.00,
@@ -1230,9 +1230,9 @@ function handleConfirmPosition() {
     return;
   }
 
-  const currentHOOD = currentUser.balances["HOOD"] || 0;
+  const currentHOOD = currentUser.balances["ETH (HOOD)"] || 0;
   if (currentHOOD < amtVal) {
-    setErrorDisplay("bet", true, "Insufficient HOOD balance. Please top up your account.");
+    setErrorDisplay("bet", true, "Insufficient ETH (HOOD) balance. Please top up your account.");
     return;
   }
 
@@ -1252,7 +1252,7 @@ function handleConfirmPosition() {
     ...currentUser,
     balances: {
       ...currentUser.balances,
-      HOOD: currentHOOD - amtVal
+      "ETH (HOOD)": currentHOOD - amtVal
     },
     positions: [newPosition, ...(currentUser.positions || [])]
   };
