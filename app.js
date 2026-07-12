@@ -588,7 +588,7 @@ const markets = [
 ];
 
 const coins = [
-  { code: "BNB", name: "BNB", symbol: "B", color: "#f3ba2f" },
+  { code: "HOOD", name: "Robinhood", symbol: "H", color: "#aed900" },
   { code: "USDC", name: "USD Coin", symbol: "$", color: "#2775ca" },
   { code: "BTC", name: "Bitcoin", symbol: "₿", color: "#f7931a" },
   { code: "ETH", name: "Ethereum", symbol: "◆", color: "#8c8cff" },
@@ -606,8 +606,52 @@ let coin = coins[0];
 let amount = "";
 
 // Load initial user state
+// Prices state
+let prices = {
+  HOOD: 111.59,
+  BTC: 64213.50,
+  ETH: 1819.80,
+  SOL: 77.91,
+  BNB: 580.35,
+  XRP: 1.12,
+  USDC: 1.00,
+  USDT: 1.00
+};
+
+function getHOODPrice() {
+  return prices.HOOD;
+}
+
+async function updatePrices() {
+  try {
+    const res = await fetch('https://api.binance.com/api/v3/ticker/price?symbols=[%22BTCUSDT%22,%22ETHUSDT%22,%22SOLUSDT%22,%22BNBUSDT%22,%22XRPUSDT%22]');
+    if (res.ok) {
+      const data = await res.json();
+      data.forEach(item => {
+        if (item.symbol === 'BTCUSDT') prices.BTC = parseFloat(item.price);
+        if (item.symbol === 'ETHUSDT') prices.ETH = parseFloat(item.price);
+        if (item.symbol === 'SOLUSDT') prices.SOL = parseFloat(item.price);
+        if (item.symbol === 'BNBUSDT') prices.BNB = parseFloat(item.price);
+        if (item.symbol === 'XRPUSDT') prices.XRP = parseFloat(item.price);
+      });
+    }
+  } catch (e) {
+    console.warn("Failed to fetch live crypto prices, using fallbacks.", e);
+  }
+
+  // Fluctuate HOOD stock price slightly to feel alive
+  const drift = (Math.random() - 0.5) * 0.15;
+  prices.HOOD = Math.max(10.0, prices.HOOD + drift);
+
+  // Redraw components that use prices
+  renderTicker();
+  renderHeader();
+  renderMarkets();
+}
+
+// Load initial user state
 function init() {
-  const savedUser = localStorage.getItem("foursight_current_user");
+  const savedUser = localStorage.getItem("hoodsight_current_user");
   if (savedUser) {
     try {
       currentUser = JSON.parse(savedUser);
@@ -616,6 +660,10 @@ function init() {
       console.error(e);
     }
   }
+  
+  // Fetch live prices immediately and start interval
+  updatePrices();
+  setInterval(updatePrices, 8000);
   
   // Set default currency label in top up modal
   updateTopupCoinUI();
@@ -630,16 +678,16 @@ function init() {
 // Save user details
 function saveUser(user) {
   if (!user) {
-    localStorage.removeItem("foursight_current_user");
+    localStorage.removeItem("hoodsight_current_user");
     return;
   }
-  localStorage.setItem("foursight_current_user", JSON.stringify(user));
+  localStorage.setItem("hoodsight_current_user", JSON.stringify(user));
   
-  const allUsersRaw = localStorage.getItem("foursight_users") || "{}";
+  const allUsersRaw = localStorage.getItem("hoodsight_users") || "{}";
   try {
     const allUsers = JSON.parse(allUsersRaw);
     allUsers[user.email.toLowerCase()] = user;
-    localStorage.setItem("foursight_users", JSON.stringify(allUsers));
+    localStorage.setItem("hoodsight_users", JSON.stringify(allUsers));
   } catch (e) {
     console.error(e);
   }
@@ -656,7 +704,7 @@ function renderHeader() {
       <button class="topup-mini" id="header-topup-trigger">＋ Top up</button>
       <div class="nav-profile-container">
         <span class="balance-badge">
-          <strong>${(currentUser.balances["BNB"] || 0).toFixed(4)}</strong> BNB
+          <strong>${(currentUser.balances["HOOD"] || 0).toFixed(4)}</strong> HOOD
         </span>
         <button class="primary small" id="header-logout-btn">Log out</button>
       </div>
@@ -731,10 +779,10 @@ function renderMarkets() {
           <div class="position-details">
             <div class="pos-row"><span>Outcome backed</span><strong>${pos.side}</strong></div>
             <div class="pos-row"><span>Average Price</span><span>${pos.pct}% chance</span></div>
-            <div class="pos-row"><span>Risk amount</span><strong>${pos.amount.toFixed(3)} BNB</strong></div>
-            <div class="pos-row"><span>Potential payout</span><strong style="color: var(--lime);">${pos.payout.toFixed(4)} BNB</strong></div>
+            <div class="pos-row"><span>Risk amount</span><strong>${pos.amount.toFixed(3)} HOOD</strong></div>
+            <div class="pos-row"><span>Potential payout</span><strong style="color: var(--lime);">${pos.payout.toFixed(4)} HOOD</strong></div>
           </div>
-          <footer style="margin-top: auto; border-top: 1px solid rgba(255,196,0,0.13); padding-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <footer style="margin-top: auto; border-top: 1px solid var(--line); padding-top: 12px; display: flex; justify-content: space-between; align-items: center;">
             <span style="color: var(--green); font-weight: 700; font-size: 12px;">Active Position</span>
             <span style="color: #737b82; font-size: 11px;">ID: ${pos.id}</span>
           </footer>
@@ -757,6 +805,9 @@ function renderMarkets() {
   }
 
   container.innerHTML = visible.map(m => {
+    // Dynamically calculate pool in HOOD based on current live price of HOOD!
+    const poolInHOOD = m.totalPoolUSD / getHOODPrice();
+
     return `
       <article class="market-card glass" data-id="${m.id}">
         <div class="card-top">
@@ -775,7 +826,7 @@ function renderMarkets() {
           <svg class="trend-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.94" />
           </svg>
-          <span class="bnb-val">${m.totalPoolBNB.toFixed(3)} <b class="bnb-symbol">BNB</b></span>
+          <span class="bnb-val">${poolInHOOD.toLocaleString(undefined, { maximumFractionDigits: 0 })} <b class="bnb-symbol">HOOD</b></span>
         </div>
         
         <div class="percentage-header">
@@ -790,7 +841,7 @@ function renderMarkets() {
         
         <div class="sparkline-container">
           <svg class="sparkline-svg" viewBox="0 0 360 40">
-            <path d="${m.sparklinePath}" fill="none" stroke="#ffc400" strokeWidth="2" strokeLinecap="round" />
+            <path d="${m.sparklinePath}" fill="none" stroke="var(--lime)" strokeWidth="2" strokeLinecap="round" />
           </svg>
         </div>
         
@@ -822,11 +873,12 @@ function renderTicker() {
   if (!container) return;
 
   const data = [
-    ['BTC','$64,213','+0.59%'],
-    ['ETH','$1,819','+1.84%'],
-    ['SOL','$77.91','+0.25%'],
-    ['BNB','$580.35','+0.92%'],
-    ['XRP','$1.12','+1.45%']
+    ['HOOD', `$${prices.HOOD.toFixed(2)}`, '+1.42%'],
+    ['BTC', `$${prices.BTC.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, '+0.59%'],
+    ['ETH', `$${prices.ETH.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, '+1.84%'],
+    ['SOL', `$${prices.SOL.toFixed(2)}`, '+0.25%'],
+    ['BNB', `$${prices.BNB.toFixed(2)}`, '+0.92%'],
+    ['XRP', `$${prices.XRP.toFixed(4)}`, '+1.45%']
   ];
 
   // Repeat twice for infinite scroll wrap
@@ -844,7 +896,7 @@ function triggerModal(type, targetAction) {
 
   const loaderText = {
     auth: "Verifying secure credentials...",
-    topup: "Connecting to BNB Chain Node...",
+    topup: "Connecting to Hoodsight Chain Node...",
     bet: "Calculating liquidity pool depths..."
   };
 
@@ -917,9 +969,9 @@ function openBetModal(market, side, pct) {
     
     // Redraw quick buttons
     const quickContainer = document.getElementById("bet-quick-buttons");
-    const quicks = [0.05, 0.1, 0.25, 0.5];
+    const quicks = [1, 5, 10, 25];
     quickContainer.innerHTML = quicks.map(q => {
-      return `<button data-val="${q}">+${q} BNB</button>`;
+      return `<button data-val="${q}">+${q} HOOD</button>`;
     }).join("");
 
     quickContainer.querySelectorAll("button").forEach(btn => {
@@ -942,8 +994,8 @@ function updateBetPayouts() {
   const amtVal = parseFloat(amount) || 0;
   const payVal = bet ? amtVal / (bet.pct / 100) : 0;
   
-  document.getElementById("bet-payout-display").innerText = `${payVal.toFixed(4)} BNB`;
-  document.getElementById("bet-profit-display").innerText = `${Math.max(0, payVal - amtVal).toFixed(4)} BNB`;
+  document.getElementById("bet-payout-display").innerText = `${payVal.toFixed(4)} HOOD`;
+  document.getElementById("bet-profit-display").innerText = `${Math.max(0, payVal - amtVal).toFixed(4)} HOOD`;
   
   const submitBtn = document.getElementById("bet-confirm-submit");
   submitBtn.disabled = (amtVal <= 0);
@@ -973,7 +1025,7 @@ function setAuthMode(mode) {
   document.getElementById("auth-error-display").style.display = "none";
 
   if (mode === "login") {
-    title.innerText = "Sign in to Foursight";
+    title.innerText = "Sign in to Hoodsight";
     desc.innerText = "Enter your credentials to access your portfolio.";
     loginBtns.style.display = "block";
     signupBtns.style.display = "none";
@@ -1003,7 +1055,7 @@ function handleLogin() {
     return;
   }
 
-  const allUsersRaw = localStorage.getItem("foursight_users") || "{}";
+  const allUsersRaw = localStorage.getItem("hoodsight_users") || "{}";
   try {
     const allUsers = JSON.parse(allUsersRaw);
     const user = allUsers[email.toLowerCase()];
@@ -1015,7 +1067,7 @@ function handleLogin() {
     
     currentUser = user;
     loggedIn = true;
-    localStorage.setItem("foursight_current_user", JSON.stringify(user));
+    localStorage.setItem("hoodsight_current_user", JSON.stringify(user));
     closeModals();
     renderHeader();
     renderCategories();
@@ -1043,7 +1095,7 @@ function handleSignup() {
     return;
   }
 
-  const allUsersRaw = localStorage.getItem("foursight_users") || "{}";
+  const allUsersRaw = localStorage.getItem("hoodsight_users") || "{}";
   try {
     const allUsers = JSON.parse(allUsersRaw);
     if (allUsers[email.toLowerCase()]) {
@@ -1057,7 +1109,7 @@ function handleSignup() {
       email: email,
       password: password,
       balances: {
-        BNB: 0.00,
+        HOOD: 0.00,
         USDC: 0.00,
         BTC: 0.00,
         ETH: 0.00,
@@ -1068,11 +1120,11 @@ function handleSignup() {
     };
     
     allUsers[email.toLowerCase()] = newUser;
-    localStorage.setItem("foursight_users", JSON.stringify(allUsers));
+    localStorage.setItem("hoodsight_users", JSON.stringify(allUsers));
     
     currentUser = newUser;
     loggedIn = true;
-    localStorage.setItem("foursight_current_user", JSON.stringify(newUser));
+    localStorage.setItem("hoodsight_current_user", JSON.stringify(newUser));
     closeModals();
     renderHeader();
     renderCategories();
@@ -1086,7 +1138,7 @@ function handleSignup() {
 function handleLogout() {
   currentUser = null;
   loggedIn = false;
-  localStorage.removeItem("foursight_current_user");
+  localStorage.removeItem("hoodsight_current_user");
   category = "All";
   renderHeader();
   renderCategories();
@@ -1094,8 +1146,8 @@ function handleLogout() {
 }
 
 function handleWalletConnect() {
-  const mockEmail = "wallet_user@foursight.xyz";
-  const allUsersRaw = localStorage.getItem("foursight_users") || "{}";
+  const mockEmail = "wallet_user@hoodsight.xyz";
+  const allUsersRaw = localStorage.getItem("hoodsight_users") || "{}";
   try {
     const allUsers = JSON.parse(allUsersRaw);
     let user = allUsers[mockEmail];
@@ -1103,7 +1155,7 @@ function handleWalletConnect() {
       user = {
         email: mockEmail,
         balances: {
-          BNB: 0.00,
+          HOOD: 0.00,
           USDC: 0.00,
           BTC: 0.00,
           ETH: 0.00,
@@ -1113,11 +1165,11 @@ function handleWalletConnect() {
         positions: []
       };
       allUsers[mockEmail] = user;
-      localStorage.setItem("foursight_users", JSON.stringify(allUsers));
+      localStorage.setItem("hoodsight_users", JSON.stringify(allUsers));
     }
     currentUser = user;
     loggedIn = true;
-    localStorage.setItem("foursight_current_user", JSON.stringify(user));
+    localStorage.setItem("hoodsight_current_user", JSON.stringify(user));
     closeModals();
     renderHeader();
     renderCategories();
@@ -1178,9 +1230,9 @@ function handleConfirmPosition() {
     return;
   }
 
-  const currentBNB = currentUser.balances["BNB"] || 0;
-  if (currentBNB < amtVal) {
-    setErrorDisplay("bet", true, "Insufficient BNB balance. Please top up your account.");
+  const currentHOOD = currentUser.balances["HOOD"] || 0;
+  if (currentHOOD < amtVal) {
+    setErrorDisplay("bet", true, "Insufficient HOOD balance. Please top up your account.");
     return;
   }
 
@@ -1200,7 +1252,7 @@ function handleConfirmPosition() {
     ...currentUser,
     balances: {
       ...currentUser.balances,
-      BNB: currentBNB - amtVal
+      HOOD: currentHOOD - amtVal
     },
     positions: [newPosition, ...(currentUser.positions || [])]
   };
