@@ -867,10 +867,7 @@ function triggerModal(type, targetAction) {
 
 // Modal open functions
 function openLoginModal() {
-  triggerModal("auth", () => {
-    document.getElementById("auth-modal").style.display = "block";
-    setAuthMode("login");
-  });
+  window.location.href = "/login.html";
 }
 
 function openTopupModal() {
@@ -963,124 +960,14 @@ function setErrorDisplay(modalType, isShow, msgText = "") {
   }
 }
 
-// Set login mode (login/signup)
-function setAuthMode(mode) {
-  const title = document.getElementById("auth-title");
-  const desc = document.getElementById("auth-description");
-  const loginBtns = document.getElementById("auth-login-buttons-container");
-  const signupBtns = document.getElementById("auth-signup-buttons-container");
-  
-  document.getElementById("auth-error-display").style.display = "none";
 
-  if (mode === "login") {
-    title.innerText = "Sign in to Hoodsight";
-    desc.innerText = "Enter your credentials to access your portfolio.";
-    loginBtns.style.display = "block";
-    signupBtns.style.display = "none";
-  } else {
-    title.innerText = "Create your account";
-    desc.innerText = "Sign up now and start trading prediction markets.";
-    loginBtns.style.display = "none";
-    signupBtns.style.display = "block";
-  }
-}
 
 function updateTopupCoinUI() {
   document.getElementById("topup-coin-code-label").innerText = coin.code;
   document.getElementById("topup-coin-code-suffix").innerText = coin.code;
 }
 
-// Auth click handlers
-function handleLogin() {
-  const email = document.getElementById("auth-email-input").value;
-  const password = document.getElementById("auth-password-input").value;
-  const errDisplay = document.getElementById("auth-error-display");
 
-  errDisplay.style.display = "none";
-  if (!email || !password) {
-    errDisplay.innerText = "Please fill in all fields.";
-    errDisplay.style.display = "block";
-    return;
-  }
-
-  const allUsersRaw = localStorage.getItem("hoodsight_users") || "{}";
-  try {
-    const allUsers = JSON.parse(allUsersRaw);
-    const user = allUsers[email.toLowerCase()];
-    if (!user || user.password !== password) {
-      errDisplay.innerText = "Invalid email or password.";
-      errDisplay.style.display = "block";
-      return;
-    }
-    
-    currentUser = user;
-    loggedIn = true;
-    localStorage.setItem("hoodsight_current_user", JSON.stringify(user));
-    closeModals();
-    renderHeader();
-    renderCategories();
-    renderMarkets();
-  } catch (e) {
-    errDisplay.innerText = "Failed to sign in. Please try again.";
-    errDisplay.style.display = "block";
-  }
-}
-
-function handleSignup() {
-  const email = document.getElementById("auth-email-input").value;
-  const password = document.getElementById("auth-password-input").value;
-  const errDisplay = document.getElementById("auth-error-display");
-
-  errDisplay.style.display = "none";
-  if (!email || !password) {
-    errDisplay.innerText = "Please fill in all fields.";
-    errDisplay.style.display = "block";
-    return;
-  }
-  if (password.length < 6) {
-    errDisplay.innerText = "Password must be at least 6 characters.";
-    errDisplay.style.display = "block";
-    return;
-  }
-
-  const allUsersRaw = localStorage.getItem("hoodsight_users") || "{}";
-  try {
-    const allUsers = JSON.parse(allUsersRaw);
-    if (allUsers[email.toLowerCase()]) {
-      errDisplay.innerText = "An account with this email already exists.";
-      errDisplay.style.display = "block";
-      return;
-    }
-    
-    // Initial balances at exactly 0.00
-    const newUser = {
-      email: email,
-      password: password,
-      balances: {
-        ETH: 0.00,
-        USDC: 0.00,
-        BTC: 0.00,
-        USDT: 0.00,
-        SOL: 0.00
-      },
-      positions: []
-    };
-    
-    allUsers[email.toLowerCase()] = newUser;
-    localStorage.setItem("hoodsight_users", JSON.stringify(allUsers));
-    
-    currentUser = newUser;
-    loggedIn = true;
-    localStorage.setItem("hoodsight_current_user", JSON.stringify(newUser));
-    closeModals();
-    renderHeader();
-    renderCategories();
-    renderMarkets();
-  } catch (e) {
-    errDisplay.innerText = "Failed to sign up. Please try again.";
-    errDisplay.style.display = "block";
-  }
-}
 
 function handleLogout() {
   currentUser = null;
@@ -1092,38 +979,7 @@ function handleLogout() {
   renderMarkets();
 }
 
-function handleWalletConnect() {
-  const mockEmail = "wallet_user@hoodsight.xyz";
-  const allUsersRaw = localStorage.getItem("hoodsight_users") || "{}";
-  try {
-    const allUsers = JSON.parse(allUsersRaw);
-    let user = allUsers[mockEmail];
-    if (!user) {
-      user = {
-        email: mockEmail,
-        balances: {
-          ETH: 0.00,
-          USDC: 0.00,
-          BTC: 0.00,
-          USDT: 0.00,
-          SOL: 0.00
-        },
-        positions: []
-      };
-      allUsers[mockEmail] = user;
-      localStorage.setItem("hoodsight_users", JSON.stringify(allUsers));
-    }
-    currentUser = user;
-    loggedIn = true;
-    localStorage.setItem("hoodsight_current_user", JSON.stringify(user));
-    closeModals();
-    renderHeader();
-    renderCategories();
-    renderMarkets();
-  } catch (e) {
-    console.error(e);
-  }
-}
+
 
 function handleTopup() {
   setErrorDisplay("topup", false);
@@ -1236,7 +1092,6 @@ function setupEventListeners() {
   });
 
   // Modal Closures
-  document.getElementById("auth-close").addEventListener("click", closeModals);
   document.getElementById("topup-close").addEventListener("click", closeModals);
   document.getElementById("bet-close").addEventListener("click", closeModals);
 
@@ -1252,15 +1107,6 @@ function setupEventListeners() {
     query = e.target.value;
     renderMarkets();
   });
-
-  // Auth Mode Toggles
-  document.getElementById("toggle-to-signup").addEventListener("click", () => setAuthMode("signup"));
-  document.getElementById("toggle-to-login").addEventListener("click", () => setAuthMode("login"));
-
-  // Auth Submissions
-  document.getElementById("auth-login-submit").addEventListener("click", handleLogin);
-  document.getElementById("auth-signup-submit").addEventListener("click", handleSignup);
-  document.getElementById("auth-wallet-submit").addEventListener("click", handleWalletConnect);
 
   // Top Up Submission
   document.getElementById("topup-submit-btn").addEventListener("click", handleTopup);
