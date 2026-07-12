@@ -78,9 +78,7 @@ main{background-image:linear-gradient(rgba(174,217,0,.014) 1px,transparent 1px),
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 40px 60px;
-  max-width: 520px;
-  width: 100%;
+  padding: 50px 70px;
   box-sizing: border-box;
   background-color: #0d0f10;
   box-shadow: 10px 0 40px rgba(0,0,0,0.3);
@@ -271,7 +269,7 @@ main{background-image:linear-gradient(rgba(174,217,0,.014) 1px,transparent 1px),
   text-decoration: underline;
 }
 .auth-animation-side {
-  flex: 1.3;
+  flex: 1;
   position: relative;
   background-color: #08090a;
   overflow: hidden;

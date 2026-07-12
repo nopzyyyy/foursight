@@ -90,22 +90,22 @@
     });
 
     const particles = [];
-    const particleCount = 65;
+    const particleCount = 24;
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.6,
-        vy: (Math.random() - 0.5) * 0.6,
+        vx: (Math.random() - 0.5) * 0.22,
+        vy: (Math.random() - 0.5) * 0.22,
         radius: Math.random() * 2 + 1
       });
     }
 
     function animate() {
       ctx.clearRect(0, 0, width, height);
-      ctx.fillStyle = "rgba(174, 217, 0, 0.45)";
-      ctx.strokeStyle = "rgba(174, 217, 0, 0.04)";
+      ctx.fillStyle = "rgba(174, 217, 0, 0.3)";
+      ctx.strokeStyle = "rgba(174, 217, 0, 0.02)";
 
       for (let i = 0; i < particleCount; i++) {
         const p1 = particles[i];
@@ -122,7 +122,7 @@
         for (let j = i + 1; j < particleCount; j++) {
           const p2 = particles[j];
           const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
-          if (dist < 110) {
+          if (dist < 80) {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
