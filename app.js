@@ -6,8 +6,7 @@ const markets = [
     tag: "WORLD CUP",
     time: "Dec 20",
     title: "World Cup Winner: Will France win the tournament?",
-    totalPoolUSD: 4000000000,
-    totalPoolBNB: 6896551.72,
+    totalPoolUSD: 595,
     yesPct: 38,
     noPct: 62,
     sparklinePath: "M10,25 Q35,15 70,28 T130,12 T190,26 T250,8 T310,14 T350,6",
@@ -19,8 +18,7 @@ const markets = [
     tag: "WORLD CUP",
     time: "Dec 20",
     title: "World Cup Winner: Will England win the tournament?",
-    totalPoolUSD: 4000000000,
-    totalPoolBNB: 6896551.72,
+    totalPoolUSD: 504,
     yesPct: 21,
     noPct: 79,
     sparklinePath: "M10,12 Q45,22 90,8 T170,25 T250,28 T310,20 T350,32",
@@ -32,8 +30,7 @@ const markets = [
     tag: "LIVE 5M",
     time: "Active",
     title: "Will BTC go Up in the next 5 minutes?",
-    totalPoolUSD: 12400000,
-    totalPoolBNB: 21379.31,
+    totalPoolUSD: 315,
     yesPct: 51,
     noPct: 49,
     sparklinePath: "M10,20 Q45,18 90,25 T170,15 T250,28 T310,12 T350,16",
@@ -45,8 +42,7 @@ const markets = [
     tag: "WORLD CUP",
     time: "Dec 20",
     title: "World Cup Golden Boot: Will Kylian Mbappe win?",
-    totalPoolUSD: 54000000,
-    totalPoolBNB: 93103.45,
+    totalPoolUSD: 476,
     yesPct: 50,
     noPct: 50,
     sparklinePath: "M10,28 Q40,15 80,22 T150,12 T220,26 T290,18 T350,24",
@@ -58,8 +54,7 @@ const markets = [
     tag: "WORLD CUP",
     time: "Dec 20",
     title: "World Cup Golden Boot: Will Lionel Messi win?",
-    totalPoolUSD: 54000000,
-    totalPoolBNB: 93103.45,
+    totalPoolUSD: 385,
     yesPct: 42,
     noPct: 58,
     sparklinePath: "M10,15 Q40,30 80,12 T140,25 T200,10 T260,28 T320,15 T350,22",
@@ -71,8 +66,7 @@ const markets = [
     tag: "LIVE",
     time: "2H - 90'",
     title: "Will Argentina defeat Switzerland in the World Cup?",
-    totalPoolUSD: 43000000,
-    totalPoolBNB: 74137.93,
+    totalPoolUSD: 644,
     yesPct: 79,
     noPct: 21,
     sparklinePath: "M10,20 Q45,10 90,25 T170,12 T250,28 T310,14 T350,18",
@@ -84,8 +78,7 @@ const markets = [
     tag: "LIVE",
     time: "Mid 6th",
     title: "MLB: Will the Padres defeat the Blue Jays?",
-    totalPoolUSD: 915000,
-    totalPoolBNB: 1577.58,
+    totalPoolUSD: 266,
     yesPct: 62,
     noPct: 38,
     sparklinePath: "M10,25 Q35,15 70,28 T130,12 T190,26 T250,8 T310,14 T350,6",
@@ -97,8 +90,7 @@ const markets = [
     tag: "ESPORTS",
     time: "Tomorrow 4:00 AM",
     title: "LoL Worlds: Will Bilibili Gaming defeat Hanwha Life Esports?",
-    totalPoolUSD: 233000,
-    totalPoolBNB: 401.72,
+    totalPoolUSD: 168,
     yesPct: 62,
     noPct: 38,
     sparklinePath: "M10,12 Q45,22 90,8 T170,25 T250,10 T310,20 T350,14",
@@ -110,8 +102,7 @@ const markets = [
     tag: "UFC",
     time: "6:00 PM",
     title: "UFC: Will Max Holloway defeat Conor McGregor?",
-    totalPoolUSD: 15000000,
-    totalPoolBNB: 25862.07,
+    totalPoolUSD: 427,
     yesPct: 71,
     noPct: 29,
     sparklinePath: "M10,18 Q35,28 75,10 T145,22 T215,14 T285,28 T350,20",
@@ -123,8 +114,7 @@ const markets = [
     tag: "UK POLITICS",
     time: "Settled",
     title: "Clacton by-election: Will Nigel Farage win?",
-    totalPoolUSD: 2000000,
-    totalPoolBNB: 3448.28,
+    totalPoolUSD: 623,
     yesPct: 92,
     noPct: 8,
     sparklinePath: "M10,20 Q50,22 100,18 T200,20 T300,19 T350,20",
@@ -136,8 +126,7 @@ const markets = [
     tag: "UK POLITICS",
     time: "Settled",
     title: "Clacton by-election: Will Count Binface win?",
-    totalPoolUSD: 2000000,
-    totalPoolBNB: 3448.28,
+    totalPoolUSD: 105,
     yesPct: 7,
     noPct: 93,
     sparklinePath: "M10,12 Q45,22 90,8 T170,25 T250,28 T310,20 T350,32",
@@ -149,8 +138,7 @@ const markets = [
     tag: "JUSTICE",
     time: "Active",
     title: "Will Tyler Robinson be convicted of homicide?",
-    totalPoolUSD: 209000,
-    totalPoolBNB: 360.34,
+    totalPoolUSD: 196,
     yesPct: 47,
     noPct: 53,
     sparklinePath: "M10,20 Q45,18 90,25 T170,15 T250,28 T310,12 T350,16",
@@ -162,8 +150,7 @@ const markets = [
     tag: "GEOPOLITICS",
     time: "July 31",
     title: "Will Strait of Hormuz shipping traffic return to normal by July 31?",
-    totalPoolUSD: 16000000,
-    totalPoolBNB: 27586.21,
+    totalPoolUSD: 525,
     yesPct: 5,
     noPct: 95,
     sparklinePath: "M10,28 Q40,15 80,22 T150,12 T220,26 T290,18 T350,24",
@@ -175,8 +162,7 @@ const markets = [
     tag: "GEOPOLITICS",
     time: "Dec 31",
     title: "Will a US-Iran Final Nuclear Deal be reached by December 31?",
-    totalPoolUSD: 9000000,
-    totalPoolBNB: 15517.24,
+    totalPoolUSD: 294,
     yesPct: 35,
     noPct: 65,
     sparklinePath: "M10,15 Q40,30 80,12 T140,25 T200,10 T260,28 T320,15 T350,22",
@@ -188,8 +174,7 @@ const markets = [
     tag: "GEOPOLITICS",
     time: "Sept 30",
     title: "Will a US-Iran Final Nuclear Deal be reached by September 30?",
-    totalPoolUSD: 9000000,
-    totalPoolBNB: 15517.24,
+    totalPoolUSD: 126,
     yesPct: 16,
     noPct: 84,
     sparklinePath: "M10,12 Q45,22 90,8 T170,25 T250,10 T310,20 T350,14",
@@ -201,8 +186,7 @@ const markets = [
     tag: "TENNIS",
     time: "Jul 12",
     title: "Wimbledon 2026: Will Jannik Sinner win the Men's Singles?",
-    totalPoolUSD: 18000000,
-    totalPoolBNB: 31034.48,
+    totalPoolUSD: 665,
     yesPct: 82,
     noPct: 18,
     sparklinePath: "M10,25 Q35,15 70,28 T130,12 T190,26 T250,8 T310,14 T350,6",
@@ -214,8 +198,7 @@ const markets = [
     tag: "TENNIS",
     time: "Jul 12",
     title: "Wimbledon 2026: Will Alexander Zverev win the Men's Singles?",
-    totalPoolUSD: 18000000,
-    totalPoolBNB: 31034.48,
+    totalPoolUSD: 224,
     yesPct: 19,
     noPct: 81,
     sparklinePath: "M10,12 Q45,22 90,8 T170,25 T250,28 T310,20 T350,32",
@@ -227,8 +210,7 @@ const markets = [
     tag: "WORLD CUP",
     time: "Dec 15",
     title: "World Cup: Will France reach the Final?",
-    totalPoolUSD: 12000000,
-    totalPoolBNB: 20689.66,
+    totalPoolUSD: 434,
     yesPct: 60,
     noPct: 40,
     sparklinePath: "M10,20 Q45,18 90,25 T170,15 T250,28 T310,12 T350,16",
@@ -240,8 +222,7 @@ const markets = [
     tag: "WORLD CUP",
     time: "Dec 15",
     title: "World Cup: Will England reach the Final?",
-    totalPoolUSD: 12000000,
-    totalPoolBNB: 20689.66,
+    totalPoolUSD: 336,
     yesPct: 55,
     noPct: 45,
     sparklinePath: "M10,28 Q40,15 80,22 T150,12 T220,26 T290,18 T350,24",
@@ -253,8 +234,7 @@ const markets = [
     tag: "NBA",
     time: "Oct 20",
     title: "NBA: Will LeBron James' next team be the Cleveland Cavaliers?",
-    totalPoolUSD: 18000000,
-    totalPoolBNB: 31034.48,
+    totalPoolUSD: 546,
     yesPct: 45,
     noPct: 55,
     sparklinePath: "M10,15 Q40,30 80,12 T140,25 T200,10 T260,28 T320,15 T350,22",
@@ -266,8 +246,7 @@ const markets = [
     tag: "NBA",
     time: "Oct 20",
     title: "NBA: Will LeBron James' next team be the Miami Heat?",
-    totalPoolUSD: 18000000,
-    totalPoolBNB: 31034.48,
+    totalPoolUSD: 147,
     yesPct: 23,
     noPct: 77,
     sparklinePath: "M10,12 Q45,22 90,8 T170,25 T250,10 T310,20 T350,14",
@@ -279,8 +258,7 @@ const markets = [
     tag: "US ELECTIONS",
     time: "July 27",
     title: "Maine Democratic Senate nominee: Will it be Troy Jackson on July 27?",
-    totalPoolUSD: 441000,
-    totalPoolBNB: 760.34,
+    totalPoolUSD: 245,
     yesPct: 71,
     noPct: 29,
     sparklinePath: "M10,25 Q35,15 70,28 T130,12 T190,26 T250,8 T310,14 T350,6",
@@ -292,8 +270,7 @@ const markets = [
     tag: "US ELECTIONS",
     time: "July 27",
     title: "Maine Democratic Senate nominee: Will it be Shenna Bellows on July 27?",
-    totalPoolUSD: 441000,
-    totalPoolBNB: 760.34,
+    totalPoolUSD: 133,
     yesPct: 21,
     noPct: 79,
     sparklinePath: "M10,12 Q45,22 90,8 T170,25 T250,28 T310,20 T350,32",
@@ -305,8 +282,7 @@ const markets = [
     tag: "US ELECTIONS",
     time: "Nov 3",
     title: "Maine Senate Election Winner: Will a Democrat win?",
-    totalPoolUSD: 977000,
-    totalPoolBNB: 1684.48,
+    totalPoolUSD: 287,
     yesPct: 63,
     noPct: 37,
     sparklinePath: "M10,20 Q45,18 90,25 T170,15 T250,28 T310,12 T350,16",
@@ -318,8 +294,7 @@ const markets = [
     tag: "GEOPOLITICS",
     time: "Aug 15",
     title: "Will Iran announce withdrawal from MOU negotiations by August 15?",
-    totalPoolUSD: 4000000,
-    totalPoolBNB: 6896.55,
+    totalPoolUSD: 406,
     yesPct: 28,
     noPct: 72,
     sparklinePath: "M10,28 Q40,15 80,22 T150,12 T220,26 T290,18 T350,24",
@@ -331,8 +306,7 @@ const markets = [
     tag: "GEOPOLITICS",
     time: "July 31",
     title: "Will Iran announce withdrawal from MOU negotiations by July 31?",
-    totalPoolUSD: 4000000,
-    totalPoolBNB: 6896.55,
+    totalPoolUSD: 189,
     yesPct: 20,
     noPct: 80,
     sparklinePath: "M10,15 Q40,30 80,12 T140,25 T200,10 T260,28 T320,15 T350,22",
@@ -344,8 +318,7 @@ const markets = [
     tag: "GEOPOLITICS",
     time: "Dec 31",
     title: "Will the US announce a blockade on Iran by December 31?",
-    totalPoolUSD: 2000000,
-    totalPoolBNB: 3448.28,
+    totalPoolUSD: 448,
     yesPct: 60,
     noPct: 40,
     sparklinePath: "M10,20 Q45,10 90,25 T170,12 T250,28 T310,14 T350,18",
@@ -357,8 +330,7 @@ const markets = [
     tag: "GEOPOLITICS",
     time: "Aug 31",
     title: "Will the US announce a blockade on Iran by August 31?",
-    totalPoolUSD: 2000000,
-    totalPoolBNB: 3448.28,
+    totalPoolUSD: 273,
     yesPct: 53,
     noPct: 47,
     sparklinePath: "M10,12 Q45,22 90,8 T170,25 T250,10 T310,20 T350,14",
@@ -370,8 +342,7 @@ const markets = [
     tag: "GEOPOLITICS",
     time: "July 31",
     title: "Will the next round of US-Iran peace talks happen by July 31?",
-    totalPoolUSD: 6000000,
-    totalPoolBNB: 10344.83,
+    totalPoolUSD: 497,
     yesPct: 37,
     noPct: 63,
     sparklinePath: "M10,25 Q35,15 70,28 T130,12 T190,26 T250,8 T310,14 T350,6",
@@ -383,8 +354,7 @@ const markets = [
     tag: "GEOPOLITICS",
     time: "July 17",
     title: "Will the next round of US-Iran peace talks happen by July 17?",
-    totalPoolUSD: 6000000,
-    totalPoolBNB: 10344.83,
+    totalPoolUSD: 112,
     yesPct: 9,
     noPct: 91,
     sparklinePath: "M10,12 Q45,22 90,8 T170,25 T250,28 T310,20 T350,32",
@@ -396,8 +366,7 @@ const markets = [
     tag: "EU POLITICS",
     time: "Apr 2027",
     title: "Next French Presidential Election: Will Marine Le Pen win?",
-    totalPoolUSD: 112000000,
-    totalPoolBNB: 193103.45,
+    totalPoolUSD: 581,
     yesPct: 28,
     noPct: 72,
     sparklinePath: "M10,20 Q45,18 90,25 T170,15 T250,28 T310,12 T350,16",
@@ -409,8 +378,7 @@ const markets = [
     tag: "EU POLITICS",
     time: "Apr 2027",
     title: "Next French Presidential Election: Will Édouard Philippe win?",
-    totalPoolUSD: 112000000,
-    totalPoolBNB: 193103.45,
+    totalPoolUSD: 364,
     yesPct: 28,
     noPct: 72,
     sparklinePath: "M10,28 Q40,15 80,22 T150,12 T220,26 T290,18 T350,24",
@@ -422,8 +390,7 @@ const markets = [
     tag: "GEOPOLITICS",
     time: "Jun 30 2027",
     title: "Will Vladimir Putin be out as President of Russia by June 30, 2027?",
-    totalPoolUSD: 17000000,
-    totalPoolBNB: 293103.34,
+    totalPoolUSD: 203,
     yesPct: 17,
     noPct: 83,
     sparklinePath: "M10,15 Q40,30 80,12 T140,25 T200,10 T260,28 T320,15 T350,22",
@@ -435,8 +402,7 @@ const markets = [
     tag: "GEOPOLITICS",
     time: "Dec 31 2026",
     title: "Will Vladimir Putin be out as President of Russia by December 31, 2026?",
-    totalPoolUSD: 17000000,
-    totalPoolBNB: 29310.34,
+    totalPoolUSD: 84,
     yesPct: 9,
     noPct: 91,
     sparklinePath: "M10,12 Q45,22 90,8 T170,25 T250,10 T310,20 T350,14",
@@ -448,8 +414,7 @@ const markets = [
     tag: "ECONOMY",
     time: "Jul 29",
     title: "Fed July Decision: Will there be no change to interest rates?",
-    totalPoolUSD: 50000000,
-    totalPoolBNB: 86206.90,
+    totalPoolUSD: 553,
     yesPct: 78,
     noPct: 22,
     sparklinePath: "M10,25 Q35,15 70,28 T130,12 T190,26 T250,8 T310,14 T350,6",
@@ -461,8 +426,7 @@ const markets = [
     tag: "ECONOMY",
     time: "Jul 29",
     title: "Fed July Decision: Will there be a 25 bps interest rate increase?",
-    totalPoolUSD: 50000000,
-    totalPoolBNB: 86206.90,
+    totalPoolUSD: 322,
     yesPct: 21,
     noPct: 79,
     sparklinePath: "M10,12 Q45,22 90,8 T170,25 T250,28 T310,20 T350,32",
@@ -474,8 +438,7 @@ const markets = [
     tag: "US ELECTIONS",
     time: "Jul 2028",
     title: "Will J.D. Vance be the Republican Presidential Nominee in 2028?",
-    totalPoolUSD: 672000000,
-    totalPoolBNB: 1158620.69,
+    totalPoolUSD: 469,
     yesPct: 41,
     noPct: 59,
     sparklinePath: "M10,20 Q45,18 90,25 T170,15 T250,28 T310,12 T350,16",
@@ -487,8 +450,7 @@ const markets = [
     tag: "US ELECTIONS",
     time: "Jul 2028",
     title: "Will Marco Rubio be the Republican Presidential Nominee in 2028?",
-    totalPoolUSD: 672000000,
-    totalPoolBNB: 1158620.69,
+    totalPoolUSD: 238,
     yesPct: 26,
     noPct: 74,
     sparklinePath: "M10,28 Q40,15 80,22 T150,12 T220,26 T290,18 T350,24",
@@ -500,8 +462,7 @@ const markets = [
     tag: "US ELECTIONS",
     time: "Nov 2028",
     title: "2028 US Election: Will J.D. Vance win the presidency?",
-    totalPoolUSD: 656000000,
-    totalPoolBNB: 1131034.48,
+    totalPoolUSD: 413,
     yesPct: 20,
     noPct: 80,
     sparklinePath: "M10,15 Q40,30 80,12 T140,25 T200,10 T260,28 T320,15 T350,22",
@@ -513,8 +474,7 @@ const markets = [
     tag: "GEOPOLITICS",
     time: "Active",
     title: "Will Abiy Ahmed remain or be elected as the next Prime Minister of Ethiopia?",
-    totalPoolUSD: 177000000,
-    totalPoolBNB: 305172.41,
+    totalPoolUSD: 616,
     yesPct: 97,
     noPct: 3,
     sparklinePath: "M10,20 Q45,10 90,25 T170,12 T250,28 T310,14 T350,18",
@@ -526,8 +486,7 @@ const markets = [
     tag: "MLB",
     time: "12:05 PM",
     title: "MLB: Will the Pirates defeat the Brewers?",
-    totalPoolUSD: 2000000,
-    totalPoolBNB: 3448.28,
+    totalPoolUSD: 161,
     yesPct: 100,
     noPct: 0,
     sparklinePath: "M10,25 Q35,15 70,28 T130,12 T190,26 T250,8 T310,14 T350,6",
@@ -539,8 +498,7 @@ const markets = [
     tag: "WORLD CUP",
     time: "Dec 20",
     title: "World Cup Golden Ball: Will Kylian Mbappé win?",
-    totalPoolUSD: 6000000,
-    totalPoolBNB: 10344.83,
+    totalPoolUSD: 301,
     yesPct: 43,
     noPct: 57,
     sparklinePath: "M10,12 Q45,22 90,8 T170,25 T250,10 T310,20 T350,14",
@@ -552,8 +510,7 @@ const markets = [
     tag: "WORLD CUP",
     time: "Dec 20",
     title: "World Cup Golden Ball: Will Lionel Messi win?",
-    totalPoolUSD: 6000000,
-    totalPoolBNB: 10344.83,
+    totalPoolUSD: 217,
     yesPct: 34,
     noPct: 66,
     sparklinePath: "M10,18 Q35,28 75,10 T145,22 T215,14 T285,28 T350,20",
@@ -565,8 +522,7 @@ const markets = [
     tag: "US ELECTIONS",
     time: "Aug 2028",
     title: "Will Gavin Newsom be the Democratic Presidential Nominee in 2028?",
-    totalPoolUSD: 1000000000,
-    totalPoolBNB: 1724137.93,
+    totalPoolUSD: 686,
     yesPct: 19,
     noPct: 81,
     sparklinePath: "M10,20 Q50,22 100,18 T200,20 T300,19 T350,20",
@@ -578,8 +534,7 @@ const markets = [
     tag: "US ELECTIONS",
     time: "Aug 2028",
     title: "Will Alexandria Ocasio-Cortez be the Democratic Presidential Nominee in 2028?",
-    totalPoolUSD: 1000000000,
-    totalPoolBNB: 1724137.93,
+    totalPoolUSD: 56,
     yesPct: 14,
     noPct: 86,
     sparklinePath: "M10,12 Q45,22 90,8 T170,25 T250,28 T310,20 T350,32",
@@ -588,10 +543,9 @@ const markets = [
 ];
 
 const coins = [
-  { code: "ETH (HOOD)", name: "Ethereum (Robinhood)", symbol: "Ξ", color: "#aed900" },
+  { code: "ETH", name: "Ethereum (Robinhood)", symbol: "Ξ", color: "#aed900" },
   { code: "USDC", name: "USD Coin", symbol: "$", color: "#2775ca" },
   { code: "BTC", name: "Bitcoin", symbol: "₿", color: "#f7931a" },
-  { code: "ETH", name: "Ethereum", symbol: "◆", color: "#8c8cff" },
   { code: "USDT", name: "Tether", symbol: "₮", color: "#26a17b" },
   { code: "SOL", name: "Solana", symbol: "S", color: "#a06cff" }
 ];
@@ -608,7 +562,6 @@ let amount = "";
 // Load initial user state
 // Prices state
 let prices = {
-  HOOD: 111.59,
   BTC: 64213.50,
   ETH: 1819.80,
   SOL: 77.91,
@@ -618,8 +571,8 @@ let prices = {
   USDT: 1.00
 };
 
-function getHOODPrice() {
-  return prices.HOOD;
+function getETHPrice() {
+  return prices.ETH;
 }
 
 async function updatePrices() {
@@ -638,10 +591,6 @@ async function updatePrices() {
   } catch (e) {
     console.warn("Failed to fetch live crypto prices, using fallbacks.", e);
   }
-
-  // Fluctuate HOOD stock price slightly to feel alive
-  const drift = (Math.random() - 0.5) * 0.15;
-  prices.HOOD = Math.max(10.0, prices.HOOD + drift);
 
   // Redraw components that use prices
   renderTicker();
@@ -704,7 +653,7 @@ function renderHeader() {
       <button class="topup-mini" id="header-topup-trigger">＋ Top up</button>
       <div class="nav-profile-container">
         <span class="balance-badge">
-          <strong>${(currentUser.balances["ETH (HOOD)"] || 0).toFixed(4)}</strong> ETH (HOOD)
+          <strong>${(currentUser.balances["ETH"] || 0).toFixed(4)}</strong> ETH
         </span>
         <button class="primary small" id="header-logout-btn">Log out</button>
       </div>
@@ -779,8 +728,8 @@ function renderMarkets() {
           <div class="position-details">
             <div class="pos-row"><span>Outcome backed</span><strong>${pos.side}</strong></div>
             <div class="pos-row"><span>Average Price</span><span>${pos.pct}% chance</span></div>
-            <div class="pos-row"><span>Risk amount</span><strong>${pos.amount.toFixed(3)} ETH (HOOD)</strong></div>
-            <div class="pos-row"><span>Potential payout</span><strong style="color: var(--lime);">${pos.payout.toFixed(4)} ETH (HOOD)</strong></div>
+            <div class="pos-row"><span>Risk amount</span><strong>${pos.amount.toFixed(3)} ETH</strong></div>
+            <div class="pos-row"><span>Potential payout</span><strong style="color: var(--lime);">${pos.payout.toFixed(4)} ETH</strong></div>
           </div>
           <footer style="margin-top: auto; border-top: 1px solid var(--line); padding-top: 12px; display: flex; justify-content: space-between; align-items: center;">
             <span style="color: var(--green); font-weight: 700; font-size: 12px;">Active Position</span>
@@ -805,8 +754,8 @@ function renderMarkets() {
   }
 
   container.innerHTML = visible.map(m => {
-    // Dynamically calculate pool in HOOD based on current live price of HOOD!
-    const poolInHOOD = m.totalPoolUSD / getHOODPrice();
+    // Dynamically calculate pool in ETH based on current live price of ETH!
+    const poolInETH = m.totalPoolUSD / getETHPrice();
 
     return `
       <article class="market-card glass" data-id="${m.id}">
@@ -826,7 +775,7 @@ function renderMarkets() {
           <svg class="trend-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.94" />
           </svg>
-          <span class="bnb-val">${poolInHOOD.toLocaleString(undefined, { maximumFractionDigits: 0 })} <b class="bnb-symbol">ETH (HOOD)</b></span>
+          <span class="bnb-val">${poolInETH.toLocaleString(undefined, { minimumFractionDigits: 3, maximumFractionDigits: 4 })} <b class="bnb-symbol">ETH</b></span>
         </div>
         
         <div class="percentage-header">
@@ -873,9 +822,8 @@ function renderTicker() {
   if (!container) return;
 
   const data = [
-    ['ETH (HOOD)', `$${prices.HOOD.toFixed(2)}`, '+1.42%'],
+    ['ETH', `$${prices.ETH.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, '+1.42%'],
     ['BTC', `$${prices.BTC.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, '+0.59%'],
-    ['ETH', `$${prices.ETH.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`, '+1.84%'],
     ['SOL', `$${prices.SOL.toFixed(2)}`, '+0.25%'],
     ['BNB', `$${prices.BNB.toFixed(2)}`, '+0.92%'],
     ['XRP', `$${prices.XRP.toFixed(4)}`, '+1.45%']
@@ -969,9 +917,9 @@ function openBetModal(market, side, pct) {
     
     // Redraw quick buttons
     const quickContainer = document.getElementById("bet-quick-buttons");
-    const quicks = [1, 5, 10, 25];
+    const quicks = [0.01, 0.05, 0.1, 0.25];
     quickContainer.innerHTML = quicks.map(q => {
-      return `<button data-val="${q}">+${q} ETH (HOOD)</button>`;
+      return `<button data-val="${q}">+${q} ETH</button>`;
     }).join("");
 
     quickContainer.querySelectorAll("button").forEach(btn => {
@@ -994,8 +942,8 @@ function updateBetPayouts() {
   const amtVal = parseFloat(amount) || 0;
   const payVal = bet ? amtVal / (bet.pct / 100) : 0;
   
-  document.getElementById("bet-payout-display").innerText = `${payVal.toFixed(4)} ETH (HOOD)`;
-  document.getElementById("bet-profit-display").innerText = `${Math.max(0, payVal - amtVal).toFixed(4)} ETH (HOOD)`;
+  document.getElementById("bet-payout-display").innerText = `${payVal.toFixed(4)} ETH`;
+  document.getElementById("bet-profit-display").innerText = `${Math.max(0, payVal - amtVal).toFixed(4)} ETH`;
   
   const submitBtn = document.getElementById("bet-confirm-submit");
   submitBtn.disabled = (amtVal <= 0);
@@ -1109,12 +1057,11 @@ function handleSignup() {
       email: email,
       password: password,
       balances: {
-        "ETH (HOOD)": 0.00,
+        ETH: 0.00,
         USDC: 0.00,
         BTC: 0.00,
-        ETH: 0.00,
-        SOL: 0.00,
-        USDT: 0.00
+        USDT: 0.00,
+        SOL: 0.00
       },
       positions: []
     };
@@ -1155,12 +1102,11 @@ function handleWalletConnect() {
       user = {
         email: mockEmail,
         balances: {
-          "ETH (HOOD)": 0.00,
+          ETH: 0.00,
           USDC: 0.00,
           BTC: 0.00,
-          ETH: 0.00,
-          SOL: 0.00,
-          USDT: 0.00
+          USDT: 0.00,
+          SOL: 0.00
         },
         positions: []
       };
@@ -1230,9 +1176,9 @@ function handleConfirmPosition() {
     return;
   }
 
-  const currentHOOD = currentUser.balances["ETH (HOOD)"] || 0;
-  if (currentHOOD < amtVal) {
-    setErrorDisplay("bet", true, "Insufficient ETH (HOOD) balance. Please top up your account.");
+  const currentETH = currentUser.balances["ETH"] || 0;
+  if (currentETH < amtVal) {
+    setErrorDisplay("bet", true, "Insufficient ETH balance. Please top up your account.");
     return;
   }
 
@@ -1252,7 +1198,7 @@ function handleConfirmPosition() {
     ...currentUser,
     balances: {
       ...currentUser.balances,
-      "ETH (HOOD)": currentHOOD - amtVal
+      "ETH": currentETH - amtVal
     },
     positions: [newPosition, ...(currentUser.positions || [])]
   };
