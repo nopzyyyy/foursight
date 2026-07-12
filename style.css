@@ -32,6 +32,9 @@ main{background-image:linear-gradient(rgba(255,190,0,.014) 1px,transparent 1px),
 @keyframes cardReveal{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 @media(max-width:620px){.brand-wordmark{width:88px}.hero{padding-top:130px}.hero-emblem{width:45px;height:45px}.hero h1{font-size:47px}.rotator{display:block;width:220px;margin:8px auto 0;height:1.12em}.ticker-track>div{display:flex!important}}
 
+.hero-emblem{display:block;margin:0 auto 18px}
+.rotator b:first-child{animation-delay:-.8s}
+
 /* Navigation User Profile & Position Cards styling */
 .nav-profile-container{display:flex;align-items:center;gap:12px}
 .balance-badge{background:rgba(255,196,0,0.09);border:1px solid rgba(255,196,0,0.18);padding:8px 14px;border-radius:11px;font-size:12px;color:white;display:flex;align-items:center;gap:6px}
